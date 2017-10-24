@@ -1,0 +1,145 @@
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+  .container {
+    max-width: 60rem;
+  }
+}
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: .75rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 3rem 0;
+}
+.marketing p + h4 {
+  margin-top: 1.5rem;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.input a {
+  margin: 5px;
+}
+
+.block-psg {
+  overflow-y: auto; 
+  height:180px; 
+  padding: 10px;
+}
+
+#psg span{
+  min-width: 80px;
+  margin: 4px;
+}
+#psg i{
+  color: #aaa;
+}
+
+#cky span{
+  min-width: 100px;
+  min-height: 60px;
+  margin: 4px;
+}
+
+#cky {
+  text-align: center;
+}
+
+
+.tool {
+  cursor : help;
+  position : relative;
+}
+
+.tool::before, .tool::after {
+  position : absolute;
+  left : 50%;
+  opacity : 0;
+  z-index: -100;
+}
+
+.tool:hover::before, .tool:focus::before, .tool:hover::after, .tool:focus::after {
+  opacity : 0.8;
+  z-index: 100;
+}
+
+.tool::before {
+  /*border-style : solid;
+  border-width : 1em .75em 0 .75em;
+  border-color : #3e474f transparent transparent transparent;*/
+  bottom : 100%;
+  margin-left : -.5em;
+  content : " ";
+}
+
+.tool::after {
+  background : #3e474f;
+  border-radius : .25em;
+  bottom : 100%;
+  color : white;
+  width : 30.5em;
+  padding: 1em;
+  margin-left : -8.75em;
+  content : attr(data-tip);
+}

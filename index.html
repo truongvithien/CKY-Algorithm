@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Computer Linguistic: CKY Algorithms</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    $(function () {$('[data-toggle="tooltip"]').tooltip()})
+    $(function () {$('[data-toggle="popover"]').popover()})
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link btn btn-info" href="#" data-toggle="modal" data-target="#openManager">Manager</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Computer Linguistic: CKY Algorithms</h3>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="openManager" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-chevron-left fa-sm"></i></button>
+              <h4 class="modal-title">PSG Manager</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="cfginput">Edit phrase structure grammar</label>
+                  <textarea class="form-control" id="cfginput" rows="6" placeholder="s -> np vp
+vp -> vp np"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal" onclick="newPSG(document.getElementById('cfginput').value)">Save</button>
+              <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="loadPSG()">Load Default</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="lead"> 
+          Choose a sentence: </p>
+          <div class="input">
+            <a href="#" class="btn btn-primary" onclick="CKY('Nam học')">Nam học</a>
+            <a href="#" class="btn btn-primary" onclick="CKY('Nam học bài')">Nam học bài</a>
+            <a href="#" class="btn btn-primary" onclick="CKY('Nó học ở trường')">Nó học ở trường</a>
+            <a href="#" class="btn btn-primary" onclick="CKY('Nó học bài ở trường')">Nó học bài ở trường</a>
+            <a href="#" class="btn btn-primary" onclick="CKY('Nó ở trường')">Nó ở trường</a>
+            </br>
+            <p class="lead">or other sentence: </p>
+            <form class="form-inline">
+              <div class="form-group mx-sm-3">
+                  <label for="inputPassword2" class="sr-only">Other sentence</label>
+                  <input type="text" class="form-control" id="input" placeholder="Nó học bài">
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="CKY(document.getElementById('input').value)">Run</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <p class="lead">Phrase Structure Grammar (Chomsky Normal Form)</p>
+          <div class="form-group">
+            <div id="psg" class="bg-faded block-psg" style="">
+              <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                Want to edit the phrase? Hit <strong>Manager</strong> <i class="fa fa-long-arrow-up text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="lead">Constituent Analysis (CKY Table) </p>
+      <div id="cky"></div>
+      <footer class="footer row">
+        <div class="col-lg-6 text-right">
+          Thien, Truong Vi
+          <br />14520874 (KHTN2014)
+        </div>
+        <div class="col-lg-6">
+          Nguyen, Nguyen Thanh
+          <br />14520602 (KHTN2014)
+        </div>
+      </footer>
+    </div>
+    <script src="solution/page.js"></script>
+    <script src="solution/psg.js"></script>
+    <script src="solution/cky.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
